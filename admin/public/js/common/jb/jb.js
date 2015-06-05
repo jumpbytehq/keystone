@@ -1,6 +1,6 @@
 // ============== Our Code For Managing Tooltip
 // We have multiple jQuery objects so removing Conflicts
-jQuery.noConflict();
+// jQuery.noConflict();
 (function($) {
 
 	$(document).ready(function($) {
@@ -47,7 +47,7 @@ jQuery.noConflict();
 				$('#tooltip-'+ i).on('click', {
 					dataForLabel: dataForLabelFromMap
 				}, function(event){
-
+					// For Convinience 
 					var dataForLabel = event.data.dataForLabel;
 
 					// Forming Content for Modal
@@ -62,19 +62,33 @@ jQuery.noConflict();
 					}
 
 					// Create Simple Model
-					var SM = new SimpleModal({"btn_ok":"Got it!"});
-					SM.show({
-						"title": dataForLabel.popupTitle,
-						"contents": popupContentForModal
-					});
+					picoModal({
+						content: "<center><h2>" + dataForLabel.popupTitle + "</h2></center> <br/>" + popupContentForModal,
+						closeStyles: {
+							position: "absolute", top: "-10px", right: "-10px",
+							color: "#fff",
+							background: "#0080BF", padding: "5px 10px", cursor: "pointer",
+							borderRadius: "50px", border: "1px solid #0080BF"
+						},
+						overlayStyles: {
+							backgroundColor: "#CFE9FF",
+							opacity: 0.75
+						}
+					}).show();
+
+					/* For Simple Modal
+						var SM = new SimpleModal({"btn_ok":"Got it!"});
+						SM.show({
+							"title": dataForLabel.popupTitle,
+							"contents": popupContentForModal
+						});
+					*/
 				});
 			};
 		}).fail(function() {
-			alert("Tooltip data could not be loaded.");
+			console.log("Tooltip data could not be loaded.");
 		});
 
-		// For making jQ available to window
-		window.$ = $;
 	});
 
-})(jQuery);
+})(window.jQuery);
