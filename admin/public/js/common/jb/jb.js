@@ -48,12 +48,12 @@ function initTooltip() {
 			}, function(event){
 				// For Convinience 
 				var dataForLabel = event.data.dataForLabel;
-
-				// Forming Content for Modal
-				var popupContentForModal = dataForLabel.popupContent;
-				if(dataForLabel.popupImage) {
-					if(dataForLabel.popupImage.url.length > 3) {
-						popupContentForModal += " <br/> <div style='text-align: center;'><img style='max-width: 250px;' src='" + dataForLabel.popupImage.url + "'/></div> <br/>";
+					// Forming Content for Modal
+					var popupContentForModal = dataForLabel.popupContent;
+					if(dataForLabel.popupImage) {
+						if(dataForLabel.popupImage.url.length > 3) {
+							popupContentForModal += " <br/> <div style='text-align: center;'><img style='max-height: 350px;' src='" + dataForLabel.popupImage.url + "'/></div> <br/>";
+						}
 					}
 				}
 				if(dataForLabel.popupVideo) {
