@@ -48,6 +48,9 @@ var Form = React.createClass({
 		if (this.refs.focusTarget) {
 			this.refs.focusTarget.focus();
 		}
+		// @JB - Customizations - For Initializing ToolTip
+		window.initTooltip();
+		// ===============================================
 	},
 
 	componentWillUnmount: function() {
