@@ -36,7 +36,7 @@ function initTooltip() {
 			if(dataForLabelFromMap == null) {
 				continue;
 			}
-			console.log(dataForLabelFromMap);
+			// console.log(dataForLabelFromMap);
 
 			// For each Row Add Icon at end
 			$(elements[i]).append('&nbsp;&nbsp;<span id="tooltip-'+i+'" data="'+$(elements[i]).text()+'" class="ion-information-circled"></span>');
@@ -48,12 +48,11 @@ function initTooltip() {
 			}, function(event){
 				// For Convinience 
 				var dataForLabel = event.data.dataForLabel;
-					// Forming Content for Modal
-					var popupContentForModal = dataForLabel.popupContent;
-					if(dataForLabel.popupImage) {
-						if(dataForLabel.popupImage.url.length > 3) {
-							popupContentForModal += " <br/> <div style='text-align: center;'><img style='max-height: 350px;' src='" + dataForLabel.popupImage.url + "'/></div> <br/>";
-						}
+				// Forming Content for Modal
+				var popupContentForModal = dataForLabel.popupContent;
+				if(dataForLabel.popupImage) {
+					if(dataForLabel.popupImage.url.length > 3) {
+						popupContentForModal += " <br/> <div style='text-align: center;'><img style='max-height: 350px;' src='" + dataForLabel.popupImage.url + "'/></div> <br/>";
 					}
 				}
 				if(dataForLabel.popupVideo) {
