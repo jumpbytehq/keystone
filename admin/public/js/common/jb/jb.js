@@ -54,7 +54,7 @@ jQuery.noConflict();
 					var popupContentForModal = dataForLabel.popupContent;
 					if(dataForLabel.popupImage) {
 						if(dataForLabel.popupImage.url.length > 3) {
-							popupContentForModal += " <br/> <div style='text-align: center;'><img src='" + dataForLabel.popupImage.url + "'/></div> <br/>";
+							popupContentForModal += " <br/> <div style='text-align: center;'><img style='max-width: 250px;' src='" + dataForLabel.popupImage.url + "'/></div> <br/>";
 						}
 					}
 					if(dataForLabel.popupVideo) {
